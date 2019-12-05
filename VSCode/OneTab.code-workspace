@@ -1,0 +1,40 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "[plaintext]": {
+            "editor.wordWrap": "off"
+        }, 
+        "highlight.regexes": {
+
+            // Color Scheme
+            //   https://github.com/chriskempson/tomorrow-theme
+
+            /***** OneTab *****/
+            "(https?://\\S+)( \\| )(.+)":{
+                "filterFileRegex": ".+\\.ot|onetab\\.txt",
+                "decorations": [
+                    { "color": "#66cccc" },
+                    {}, 
+                    { "color": "#99cc99" }
+                ]
+            },
+            "(#.*)":{
+                "filterFileRegex": ".+\\.ot|onetab\\.txt",
+                "decorations": [
+                    { "color": "#999999" }
+                ]
+            },
+            /***** Copy Fixer *****/
+            "(.+\\n)(https?://\\S+\\n)":{
+                "decorations": [
+                    { "color": "#66cccc" },
+                    { "color": "#99cc99" }
+                ]
+            }, 
+        }
+    }
+}
