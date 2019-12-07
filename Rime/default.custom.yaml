@@ -1,0 +1,8 @@
+patch:
+  schema_list:
+    - {schema: luna_pinyin}
+    - {schema: luna_pinyin_tw}
+    - {schema: luna_pinyin_simp}
+    - {schema: luna_pinyin_fluency}
+    - {schema: bopomofo_tw}
+  "menu/page_size": 10

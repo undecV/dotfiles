@@ -1,0 +1,6 @@
+patch:
+  "style/color_scheme": steam
+  "style/font_face": "Noto Sans CJK TC Regular"
+  "style/font_point": 14
+  "style/horizontal": true
+  "style/inline_preedit": true
