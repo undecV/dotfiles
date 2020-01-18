@@ -1,0 +1,17 @@
+{
+  "editor.rulers": [80, 120],
+  "editor.renderWhitespace": "boundary",
+  "editor.fontFamily": "'Noto Sans Mono CJK TC', monospace",
+  "workbench.colorTheme": "Tomorrow Night Eighties",
+  "workbench.iconTheme": "vscode-icons",
+  "terminal.integrated.fontFamily": "'Sarasa Mono T TC",
+  "git.autofetch": true,
+
+  "[plaintext]": {
+    "editor.wordWrap": "on"
+  },
+  
+  /* Extensions */
+  "code-runner.runInTerminal": true,
+  "code-runner.saveFileBeforeRun": true
+}
