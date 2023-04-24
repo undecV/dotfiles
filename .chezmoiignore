@@ -1,0 +1,9 @@
+{{ if and (ne .chezmoi.os "linux") (ne .chezmoi.os "android") -}}
+.vim/
+.vimrc
+.tmux.conf
+.zshenv
+.zshrc
+.zimrc
+run_once_install-packages.sh
+{{ end -}}

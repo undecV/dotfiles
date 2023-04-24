@@ -1,0 +1,62 @@
+#!/bin/sh
+
+RUNSCRIPT={{ .do_init_script }}
+
+if [ "$RUNSCRIPT" = false ] ; then
+    echo "Install packages script will not be executed."
+    return 0
+fi
+
+{{ if eq .chezmoi.os "linux" "android" -}}
+# Linux-specific and Android-specific code
+{{ end -}}
+
+{{ if eq .chezmoi.os "android" -}}
+# Android-specific code
+pkg update -y
+pkg upgrade -y
+pkg install -y git
+pkg install -y zsh
+pkg install -y tmux
+pkg install -y vim
+pkg install -y exa
+{{ end -}}
+
+{{ if eq .chezmoi.os "linux" -}}
+{{   if eq .chezmoi.osRelease.id "fedora" -}}
+# Fedora-specific code
+sudo dnf update -y
+sudo dnf upgrade -y
+sudo dnf install -y git
+sudo dnf install -y zsh
+sudo dnf install -y tmux
+sudo dnf install -y vim
+sudo dnf install -y exa
+sudo dnf install -y golang-github-alecthomas-chroma
+{{   end -}}
+
+{{   if eq .chezmoi.osRelease.id "debian" "ubuntu" -}}
+# Debian-like-specific code
+sudo apt -y update
+sudo apt -y upgrade
+sudo apt -y dist-upgrade
+sudo apt install -y git
+sudo apt install -y zsh
+sudo apt install -y tmux
+sudo apt install -y vim
+sudo apt install -y exa
+sudo apt install -y golang-chroma
+{{   end -}}
+
+{{   if eq .chezmoi.osRelease.id "debian" -}}
+# Debian-specific code
+{{   end -}}
+
+{{   if eq .chezmoi.osRelease.id "ubuntu" -}}
+# Ubuntu-specific code
+{{   end -}}
+
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+# WSL-specific code
+{{   end -}}
+{{ end -}}
