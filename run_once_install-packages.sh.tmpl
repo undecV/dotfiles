@@ -35,7 +35,7 @@ sudo dnf install -y exa
 sudo dnf install -y golang-github-alecthomas-chroma
 {{   end -}}
 
-{{   if eq .chezmoi.osRelease.id "debian" "ubuntu" -}}
+{{   if eq .chezmoi.osRelease.id "debian" "ubuntu" "raspbian" -}}
 # Debian-like-specific code
 sudo apt -y update
 sudo apt -y upgrade
