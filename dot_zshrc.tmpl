@@ -167,12 +167,13 @@ alias pkgupd="pkg update -y && pkg upgrade -y"
 {{ if eq .chezmoi.os "linux" -}}
 {{   if eq .chezmoi.osRelease.id "fedora" -}}
 # Fedora-specific code
-alias dnfupd="sudo dnf -y update && sudo dnf -y upgrade"
+alias dnfupd="sudo dnf update -y && sudo dnf upgrade -y"
 {{   end -}}
 
 {{   if eq .chezmoi.osRelease.id "debian" "ubuntu" -}}
 # Debian-like-specific code
-alias aptupd="sudo apt -y update && sudo apt -y upgrade && sudo apt -y dist-upgrade"
+alias aptupd="sudo apt update -y && sudo apt upgrade -y"
+# alias aptupd="sudo apt update -y && sudo apt upgrade -y && sudo apt dist-upgrade -y"
 {{   end -}}
 
 {{   if eq .chezmoi.osRelease.id "debian" -}}
