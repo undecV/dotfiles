@@ -139,18 +139,19 @@ unset key
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 if (($+commands[exa])) then
-  alias ls="exa"
-  alias la="exa -a --color=auto"
-  alias ll="exa -lh --color=auto --time-style=long-iso"
-  alias lla="exa -alh --color=auto --time-style=long-iso"
-  alias tree="exa --tree --color=auto"
+  alias ls="eza"
+  alias la="eza -a --color=auto"
+  alias ll="eza -lh --color=auto --time-style=long-iso"
+  alias lla="eza -alh --color=auto --time-style=long-iso"
+  alias tree="eza --tree --color=auto"
+  alias lz="eza -alhZ --color=auto --time-style=long-iso"
 else
   alias ls="/bin/ls --color=auto"
   alias la="/bin/ls -a --color=auto"
   alias ll="/bin/ls -lh --color=auto --time-style=long-iso"
   alias lla="/bin/ls -alh --color=auto --time-style=long-iso"
+  alias lz="/bin/ls -alhZ --color=auto --time-style=long-iso"
 fi
-alias lz="/bin/ls -lhZ --color=auto --time-style=long-iso"
 
 {{ if eq .chezmoi.os "linux" "android" -}}
 # Linux-specific and Android-specific code
