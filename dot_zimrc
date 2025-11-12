@@ -60,7 +60,7 @@ zmodule "ssh"
 zmodule "pvenv"
 zmodule "prompt-pwd"
 # zmodule "zdharma-continuum/fast-syntax-highlighting"
-zmodule "rupa/z"
+# zmodule "rupa/z"
 # zmodule "zpm-zsh/ls"
 
 zmodule "romkatv/powerlevel10k" --use degit # Theme
