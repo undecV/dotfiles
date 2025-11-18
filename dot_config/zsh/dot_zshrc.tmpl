@@ -195,3 +195,7 @@ alias aptupd="sudo apt update -y && sudo apt upgrade -y"
 cdw() { cd "$(wslpath "$1")"; }
 {{   end -}}
 {{ end -}}
+
+if (($+commands[fastfetch])) then
+  fastfetch --config "$HOME/.config/fastfetch/config.jsonc"
+fi
