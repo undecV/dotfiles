@@ -13,3 +13,9 @@ README.md
 .zimrc
 run_once_install-packages.sh
 {{ end -}}
+
+# Windows-specific files
+{{ if and (ne .chezmoi.os "windows") -}}
+Documents/
+run_once_intsall-packages.bat
+{{ end -}}

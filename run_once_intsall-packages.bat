@@ -1,0 +1,4 @@
+winget install --id "lsd-rs.lsd" --source winget
+winget install --id "twpayne.chezmoi" --source winget
+winget install --id "Fastfetch-cli.Fastfetch" --source winget
+winget install --id "JanDeDobbeleer.OhMyPosh" --source winget
