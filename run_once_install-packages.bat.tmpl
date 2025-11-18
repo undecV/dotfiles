@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.os "windows" -}}
+{{ if and (eq .chezmoi.os "windows") .do_init_script -}}
 winget install --id "lsd-rs.lsd" --source winget
 winget install --id "twpayne.chezmoi" --source winget
 winget install --id "Fastfetch-cli.Fastfetch" --source winget
