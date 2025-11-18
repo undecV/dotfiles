@@ -1,3 +1,4 @@
+{{ if eq .chezmoi.os "linux" "android" -}}
 #!/bin/sh
 set -u
 
@@ -6,8 +7,8 @@ if ! {{ .do_init_script }} ; then
     exit 0
 fi
 
-{{ if eq .chezmoi.os "linux" "android" -}}
 # Linux-specific and Android-specific code
+
 {{ end -}}
 
 {{ if eq .chezmoi.os "android" -}}
