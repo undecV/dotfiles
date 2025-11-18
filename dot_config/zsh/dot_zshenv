@@ -1,0 +1,11 @@
+skip_global_compinit=1
+
+# export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+export ZIM_CONFIG_FILE=${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zimrc
+export ZIM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zim"
+
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"

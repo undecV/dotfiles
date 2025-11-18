@@ -1,0 +1,81 @@
+#!/bin/sh
+set -u
+
+if ! {{ .do_init_script }} ; then
+    echo "Install packages script will not be executed."
+    exit 0
+fi
+
+{{ if eq .chezmoi.os "linux" "android" -}}
+# Linux-specific and Android-specific code
+{{ end -}}
+
+{{ if eq .chezmoi.os "android" -}}
+# Android-specific code
+pkg update -y && pkg upgrade -y
+pkg install -y git
+pkg install -y zsh
+pkg install -y tmux
+pkg install -y vim
+# pkg install -y exa
+{{ end -}}
+
+{{ if eq .chezmoi.os "linux" -}}
+# Linux-specific code
+
+{{   if eq .chezmoi.osRelease.id "fedora" -}}
+# Fedora-specific code
+sudo dnf update -y && sudo dnf upgrade -y
+sudo dnf install -y git
+sudo dnf install -y zsh
+sudo dnf install -y tmux
+sudo dnf install -y vim
+sudo apt install -y unzip
+# sudo dnf install -y eza
+sudo dnf install -y lsd
+sudo dnf install -y golang-github-alecthomas-chroma
+sudo dnf install -y fastfetch
+{{   end -}}
+
+{{   if eq .chezmoi.osRelease.id "debian" "ubuntu" "raspbian" -}}
+# Debian-like-specific code
+sudo apt -y update && sudo apt -y upgrade
+# sudo apt -y dist-upgrade
+sudo apt install -y git
+sudo apt install -y zsh
+sudo apt install -y tmux
+sudo apt install -y vim
+sudo apt install -y unzip
+sudo apt install -y golang-chroma
+sudo apt install -y gpg
+sudo apt install -y wget
+sudo apt install -y lsd
+sudo apt install -y fastfetch
+
+# # eza: A modern, maintained replacement for ls
+# # https://github.com/eza-community/eza
+# sudo mkdir -p /etc/apt/keyrings
+# wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+# echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
+# sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+# sudo apt -y update
+# sudo apt install -y eza
+{{   end -}}
+
+{{   if eq .chezmoi.osRelease.id "debian" -}}
+# Debian-specific code
+{{   end -}}
+
+{{   if eq .chezmoi.osRelease.id "ubuntu" -}}
+# Ubuntu-specific code
+{{   end -}}
+
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+# WSL-specific code
+{{   end -}}
+
+# Linux-specific code
+bash "$HOME/.local/share/install_sh/oh_my_posh.sh" \
+    -d "$HOME/.local/bin"
+
+{{ end -}}

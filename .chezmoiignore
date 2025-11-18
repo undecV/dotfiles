@@ -1,0 +1,15 @@
+README.md
+.gitignore
+
+# Linux-specific and Android-specific files
+{{ if and (ne .chezmoi.os "linux") (ne .chezmoi.os "android") -}}
+.config/zsh/
+.vim/
+.local/share/install_sh/
+.vimrc
+.tmux.conf
+.zshenv
+.zshrc
+.zimrc
+run_once_install-packages.sh
+{{ end -}}

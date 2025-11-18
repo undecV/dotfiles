@@ -1,0 +1,115 @@
+//    ______           __  ______      __ 
+//   / ____/___ ______/ /_/ ____/___ _/ /_
+//  / /_  / __ `/ ___/ __/ /   / __ `/ __/
+// / __/ / /_/ (__  ) /_/ /___/ /_/ / /_  
+///_/    \__,_/____/\__/\____/\__,_/\__/  
+//  https://github.com/m3tozz/FastCat
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "~/.config/fastfetch/ascii.txt",
+        "color": {
+            "1": "0"
+        }
+    },
+    "display": {
+        "separator": " "
+    },
+    "modules": [
+        "break",
+        {
+            "type": "title",
+            "color": {
+                "user": "0",
+                "at": "34",
+                "host": "0"
+            }
+        },
+        "break",
+        {
+            "type": "colors",
+            "symbol": "circle"
+        },
+        "break",
+        {
+            "type": "os",
+            "keyColor": "34",
+        },
+        {
+            "type": "kernel",
+            "key": " ",
+            "keyColor": "34",
+        },
+        {
+            "type": "packages",
+            "key": " ",
+            "keyColor": "34",
+        },
+        {
+            "type": "shell",
+            "key": " ",
+            "keyColor": "34",
+        },
+        {
+            "type": "terminal",
+            "key": " ",
+            "keyColor": "34",
+        },
+        {
+            "type": "wm",
+            "key": " ",
+            "keyColor": "34",
+        },
+        {
+            "type": "terminalfont",
+            "key": " ",
+            "keyColor": "34",
+        },
+        {
+            "type": "uptime",
+            "key": " ",
+            "keyColor": "34",
+        },
+        {
+            "type": "datetime",
+            "format": "{1}-{4}-{23}",
+            "key": " ",
+            "keyColor": "34",
+        },
+        {
+            "type": "memory",
+            "key": "󰍛 ",
+            "keyColor": "34"
+        },
+        {
+            "type": "swap",
+            "key": "󰓡 ",
+            "keyColor": "34",
+        },
+        {
+            "type": "disk",
+            // "key": "󰋊 ",
+            "keyColor": "34",
+            "folders": "C:\\;D:\\",
+        },
+        {
+            "type": "monitor",
+            "key": " ",
+            "keyColor": "34",
+        },
+        {
+            "type": "localip",
+            "keyColor": "34",
+        },
+        {
+            "type": "publicip",
+            "keyColor": "34",
+        },
+        "break",
+        {
+            "type": "colors",
+            "symbol": "circle"
+        },
+        "break",
+    ]
+}
