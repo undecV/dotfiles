@@ -9,10 +9,10 @@ set -u
 {{ if eq .chezmoi.os "android" -}}
 # Android-specific code
 pkg update -y && pkg upgrade -y
-pkg install -y git
-pkg install -y zsh
-pkg install -y tmux
-pkg install -y vim
+pkg install -y git || true
+pkg install -y zsh || true
+pkg install -y tmux || true
+pkg install -y vim || true
 # pkg install -y exa
 {{ end -}}
 
@@ -22,31 +22,31 @@ pkg install -y vim
 {{ if eq .chezmoi.osRelease.id "fedora" -}}
 # Fedora-specific code
 sudo dnf update -y && sudo dnf upgrade -y
-sudo dnf install -y git
-sudo dnf install -y zsh
-sudo dnf install -y tmux
-sudo dnf install -y vim
-sudo apt install -y unzip
-# sudo dnf install -y eza
-sudo dnf install -y lsd
-sudo dnf install -y golang-github-alecthomas-chroma
-sudo dnf install -y fastfetch
+sudo dnf install -y git || true
+sudo dnf install -y zsh || true
+sudo dnf install -y tmux || true
+sudo dnf install -y vim || true
+sudo apt install -y unzip || true
+# sudo dnf install -y eza || true
+sudo dnf install -y golang-github-alecthomas-chroma || true
+sudo dnf install -y lsd || true
+sudo dnf install -y fastfetch || true
 {{ end -}}
 
 {{ if eq .chezmoi.osRelease.id "debian" "ubuntu" "raspbian" -}}
 # Debian-like-specific code
 sudo apt -y update && sudo apt -y upgrade
 # sudo apt -y dist-upgrade
-sudo apt install -y git
-sudo apt install -y zsh
-sudo apt install -y tmux
-sudo apt install -y vim
-sudo apt install -y unzip
-sudo apt install -y golang-chroma
-sudo apt install -y gpg
-sudo apt install -y wget
-sudo apt install -y lsd
-sudo apt install -y fastfetch
+sudo apt install -y git || true
+sudo apt install -y zsh || true
+sudo apt install -y tmux || true
+sudo apt install -y vim || true
+sudo apt install -y unzip || true
+sudo apt install -y gpg || true
+sudo apt install -y wget || true
+sudo apt install -y golang-chroma || true
+sudo apt install -y lsd || true
+sudo apt install -y fastfetch || true
 {{ end -}}
 
 {{ if eq .chezmoi.osRelease.id "debian" -}}
