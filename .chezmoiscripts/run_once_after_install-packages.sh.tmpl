@@ -62,8 +62,9 @@ sudo apt install -y fastfetch || true
 {{ end -}}
 
 # Linux-specific code
+mkdir -p "$HOME/.local/bin"
 bash "$HOME/.local/share/install_sh/oh_my_posh.sh" \
-    -d "$HOME/.local/bin"
+    -d "$HOME/.local/bin" || true
 
 {{ end -}}
 
