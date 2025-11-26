@@ -7,11 +7,12 @@ if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
     fastfetch --config "$env:USERPROFILE\.config\fastfetch\config.jsonc"
 }
 
-
 if (Get-Command lsd -ErrorAction SilentlyContinue) {
 
     # Force override a built-in alias
-    del alias:ls -Force
+    if (Get-Alias ls -ErrorAction SilentlyContinue) {
+        Remove-Item alias:ls -Force
+    }
 
     function ls { lsd @args }
 
