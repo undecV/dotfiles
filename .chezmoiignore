@@ -11,12 +11,14 @@ README.md
 .zshenv
 .zshrc
 .zimrc
-run_once_install-packages.sh
+.chezmoiscripts/run_once_install-packages.sh
 {{ end -}}
 
 # Windows-specific files
 {{ if and (ne .chezmoi.os "windows") -}}
 Documents/
 OneDrive/
-run_once_intsall-packages.bat
+.chezmoiscripts/run_once_intsall-packages.bat
+.chezmoiscripts/run_windows_terminal.ps1.tmpl
+.chezmoiscripts/windows_terminal.ps1
 {{ end -}}
