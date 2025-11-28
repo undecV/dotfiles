@@ -9,7 +9,15 @@
     "logo": {
         "source": "~/.config/fastfetch/ascii.txt",
         "color": {
-            "1": "0"
+            "1": "0",
+            "2": "0",
+            "3": "0",
+            "4": "0",
+            "5": "0",
+            "6": "0",
+            "7": "0",
+            "8": "0",
+            "9": "0"
         }
     },
     "display": {
@@ -21,7 +29,7 @@
             "type": "title",
             "color": {
                 "user": "0",
-                "at": "34",
+                "at": "blue",
                 "host": "0"
             }
         },
@@ -33,83 +41,96 @@
         "break",
         {
             "type": "os",
-            "keyColor": "34",
+            "keyColor": "blue"
         },
         {
             "type": "kernel",
             "key": " ",
-            "keyColor": "34",
+            "keyColor": "blue"
+        },
+        {
+            "type": "initsystem",
+            "key": " ",
+            "keyColor": "blue"
+        },
+        {
+            "type": "de",
+            "key": "󰥟 ",
+            "keyColor": "blue"
         },
         {
             "type": "packages",
             "key": " ",
-            "keyColor": "34",
+            "keyColor": "blue"
         },
         {
             "type": "shell",
             "key": " ",
-            "keyColor": "34",
+            "keyColor": "blue"
         },
         {
             "type": "terminal",
             "key": " ",
-            "keyColor": "34",
+            "keyColor": "blue"
         },
         {
             "type": "wm",
             "key": " ",
-            "keyColor": "34",
+            "keyColor": "blue"
         },
         {
             "type": "terminalfont",
             "key": " ",
-            "keyColor": "34",
+            "keyColor": "blue"
         },
         {
             "type": "uptime",
             "key": " ",
-            "keyColor": "34",
+            "keyColor": "blue",
+            "format": "{formatted} ({boot-time})"
         },
         {
             "type": "datetime",
-            "format": "{1}-{4}-{23}",
+            "format": "{year}-{month-pretty}-{day-pretty}{#dim_white}T{#}{hour-pretty}:{minute-pretty}:{second-pretty}{#dim_white}{offset-from-utc}{#}",
             "key": " ",
-            "keyColor": "34",
+            "keyColor": "blue"
+        },
+        {
+            "type": "cpuusage",
+            "key": " ",
+            "keyColor": "blue",
+            "format": "{min} : {avg} : {max}"
         },
         {
             "type": "memory",
-            "key": "󰍛 ",
-            "keyColor": "34"
+            "key": " ",
+            "keyColor": "blue"
         },
         {
             "type": "swap",
             "key": "󰓡 ",
-            "keyColor": "34",
+            "keyColor": "blue"
         },
         {
             "type": "disk",
-            // "key": "󰋊 ",
-            "keyColor": "34",
-            "folders": "C:\\;D:\\",
+            "key": "󰋊  ({mountpoint})",
+            "keyColor": "blue",
+            "folders": [
+                "C:\\",
+                "D:\\",
+                "/"
+            ]
         },
         {
             "type": "monitor",
             "key": " ",
-            "keyColor": "34",
-        },
-        {
-            "type": "localip",
-            "keyColor": "34",
-        },
-        {
-            "type": "publicip",
-            "keyColor": "34",
+            "keyColor": "blue"
         },
         "break",
         {
             "type": "colors",
             "symbol": "circle"
         },
-        "break",
+        "break"
     ]
 }
