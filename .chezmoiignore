@@ -1,5 +1,7 @@
 README.md
 .gitignore
+.vscode/
+docs/
 
 # Linux-specific and Android-specific files
 {{ if and (ne .chezmoi.os "linux") (ne .chezmoi.os "android") -}}
