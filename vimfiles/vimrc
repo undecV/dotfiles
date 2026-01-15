@@ -63,7 +63,7 @@ filetype plugin on                  " 根據檔案類型加載插件
 syntax enable                       " 打開語法高亮
 syntax on                           " 自動語法高亮
 "set bg=dark                         " 顯示不同的底色色調
-“colorscheme catppuccin_mocha        " 語法高亮主題，在 Windows Terminal 裡面可能有問題。
+"colorscheme catppuccin_mocha        " 語法高亮主題，在 Windows Terminal 裡面可能有問題。
 "set cursorline                      " 突出顯示當前 Row
 "set cursorcolumn                    " 突出顯示當前 Column
 
