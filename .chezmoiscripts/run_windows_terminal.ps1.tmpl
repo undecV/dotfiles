@@ -1,0 +1,3 @@
+{{ if and (eq .chezmoi.os "windows") -}}
+{{ template "windows_terminal.ps1" . }}
+{{ end -}}

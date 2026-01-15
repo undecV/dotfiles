@@ -1,0 +1,76 @@
+# This is not sourced during shell startup and is only used to configure zimfw.
+#
+
+#
+# Modules
+#
+
+# Sets sane Zsh built-in environment options.
+zmodule environment
+# Provides handy git aliases and functions.
+zmodule git
+# Applies correct bindkeys for input events.
+zmodule input
+# Sets a custom terminal title.
+zmodule termtitle
+# Utility aliases and functions. Adds colour to ls, grep and less.
+zmodule utility
+
+# <-- Normally new modules should be added here. Check each module documentation
+# for any caveats.
+
+#
+# Prompt
+#
+
+# Exposes how long the last command took to run to prompts.
+zmodule duration-info
+# Exposes git repository status information to prompts.
+zmodule git-info
+# A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
+zmodule asciiship
+
+#
+# Completion
+#
+
+# Additional completion definitions for Zsh.
+zmodule zsh-users/zsh-completions --fpath src
+# Enables and configures smart and extensive tab completion, must be sourced
+# after all modules that add completion definitions.
+zmodule completion
+
+#
+# Modules that must be initialized last
+#
+
+# Fish-like syntax highlighting for Zsh, must be sourced after completion.
+zmodule zsh-users/zsh-syntax-highlighting
+# Fish-like history search for Zsh, must be sourced after
+# zsh-users/zsh-syntax-highlighting. Bind keyboard shortcuts in your ~/.zshrc:
+# https://github.com/zsh-users/zsh-history-substring-search/blob/master/README.md#usage
+zmodule zsh-users/zsh-history-substring-search
+# Fish-like autosuggestions for Zsh. Add the following to your ~/.zshrc to boost
+# performance: ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+zmodule zsh-users/zsh-autosuggestions
+
+
+zmodule "archive"
+# zmodule "exa"
+zmodule "ssh"
+zmodule "pvenv"
+zmodule "prompt-pwd"
+# zmodule "zdharma-continuum/fast-syntax-highlighting"
+# zmodule "rupa/z"
+# zmodule "zpm-zsh/ls"
+
+# zmodule "ohmyzsh/ohmyzsh" -f "plugins/docker" -s "plugins/docker/docker.plugin.zsh"
+zmodule "ohmyzsh/ohmyzsh" -f "plugins/colored-man-pages" -s "plugins/colored-man-pages/colored-man-pages.plugin.zsh"
+zmodule "ohmyzsh/ohmyzsh" -f "plugins/colorize" -s "plugins/colorize/colorize.plugin.zsh" # ccat
+# zmodule "ohmyzsh/ohmyzsh" -f "plugins/cp" -s "plugins/cp/cp.plugin.zsh" # cpv
+zmodule "ohmyzsh/ohmyzsh" -f "plugins/encode64" -s "plugins/encode64/encode64.plugin.zsh" # e64, d64
+zmodule "ohmyzsh/ohmyzsh" -f "plugins/per-directory-history" -s "plugins/per-directory-history/per-directory-history.zsh" # <Ctrl+G>
+zmodule "ohmyzsh/ohmyzsh" -f "plugins/sudo" -s "plugins/sudo/sudo.plugin.zsh" # <ESC> <ESC>
+zmodule "ohmyzsh/ohmyzsh" -f "plugins/systemd" -s "plugins/systemd/systemd.plugin.zsh"
+# zmodule "ohmyzsh/ohmyzsh" -f "plugins/tmux" -s "plugins/tmux/tmux.plugin.zsh"
+zmodule "ohmyzsh/ohmyzsh" -f "plugins/urltools" -s "plugins/urltools/urltools.plugin.zsh" # urlencode, urldecode

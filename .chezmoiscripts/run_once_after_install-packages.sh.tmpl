@@ -1,0 +1,71 @@
+{{- if and (eq .chezmoi.os "linux" "android") .do_init_script -}}
+#!/bin/sh
+set -u
+
+{{ if eq .chezmoi.os "linux" "android" -}}
+# Linux-specific and Android-specific code
+{{ end -}}
+
+{{ if eq .chezmoi.os "android" -}}
+# Android-specific code
+pkg update -y && pkg upgrade -y
+pkg install -y git || true
+pkg install -y zsh || true
+pkg install -y tmux || true
+pkg install -y vim || true
+# pkg install -y exa
+{{ end -}}
+
+{{ if eq .chezmoi.os "linux" -}}
+# Linux-specific code
+
+{{ if eq .chezmoi.osRelease.id "fedora" -}}
+# Fedora-specific code
+sudo dnf update -y && sudo dnf upgrade -y
+sudo dnf install -y git || true
+sudo dnf install -y zsh || true
+sudo dnf install -y tmux || true
+sudo dnf install -y vim || true
+sudo apt install -y unzip || true
+# sudo dnf install -y eza || true
+sudo dnf install -y golang-github-alecthomas-chroma || true
+sudo dnf install -y lsd || true
+sudo dnf install -y fastfetch || true
+{{ end -}}
+
+{{ if eq .chezmoi.osRelease.id "debian" "ubuntu" "raspbian" -}}
+# Debian-like-specific code
+sudo apt -y update && sudo apt -y upgrade
+# sudo apt -y dist-upgrade
+sudo apt install -y git || true
+sudo apt install -y zsh || true
+sudo apt install -y tmux || true
+sudo apt install -y vim || true
+sudo apt install -y unzip || true
+sudo apt install -y gpg || true
+sudo apt install -y wget || true
+sudo apt install -y golang-chroma || true
+sudo apt install -y lsd || true
+sudo apt install -y fastfetch || true
+{{ end -}}
+
+{{ if eq .chezmoi.osRelease.id "debian" -}}
+# Debian-specific code
+{{ end -}}
+
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+# Ubuntu-specific code
+{{ end -}}
+
+{{ if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+# WSL-specific code
+{{ end -}}
+
+# Linux-specific code
+mkdir -p "$HOME/.local/bin"
+bash "$HOME/.local/share/install_sh/oh_my_posh.sh" \
+    -d "$HOME/.local/bin" || true
+
+{{ end -}}
+
+{{ end -}}

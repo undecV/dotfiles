@@ -1,0 +1,27 @@
+README.md
+.gitignore
+.vscode/
+docs/
+
+# Linux-specific and Android-specific files
+{{ if and (ne .chezmoi.os "linux") (ne .chezmoi.os "android") -}}
+.config/zsh/
+.config/vim/
+.config/nano/
+.local/share/install_sh/
+.tmux.conf
+.zshenv
+.zshrc
+.zimrc
+.chezmoiscripts/run_once_install-packages.sh
+{{ end -}}
+
+# Windows-specific files
+{{ if and (ne .chezmoi.os "windows") -}}
+Documents/
+OneDrive/
+vimfiles/
+.chezmoiscripts/run_once_intsall-packages.bat
+.chezmoiscripts/run_windows_terminal.ps1.tmpl
+.chezmoiscripts/windows_terminal.ps1
+{{ end -}}
