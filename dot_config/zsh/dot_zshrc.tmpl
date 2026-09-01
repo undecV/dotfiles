@@ -129,8 +129,12 @@ unset key
 # \}\}\} End configuration added by Zim Framework install
 
 
-if [[ "$TERM_PROGRAM" != "Apple_Terminal" && $+commands[oh-my-posh] == 1 ]]; then
-  eval "$(oh-my-posh init zsh --config "$HOME/.config/oh-my-posh/catppuccin.omp.json")"
+if [[ ${TERM_PROGRAM:-} != "Apple_Terminal" ]] && (( $+commands[oh-my-posh] )); then
+  OMP_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/oh-my-posh/undecv.catppuccin.mocha.omp.json"
+
+  if [[ -r "$OMP_CONFIG" ]]; then
+    eval "$(oh-my-posh init zsh --config "$OMP_CONFIG")"
+  fi
 fi
 
 if (($+commands[lsd])) then
