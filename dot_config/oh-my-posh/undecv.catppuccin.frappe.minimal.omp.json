@@ -1,0 +1,130 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "base": "#303446",
+    "mantle": "#292c3c",
+    "crust": "#232634",
+    "text": "#c6d0f5",
+    "subtext1": "#b5bfe2",
+    "surface1": "#51576d",
+    "blue": "#8caaee",
+    "pink": "#f4b8e4",
+    "lavender": "#babbf1",
+    "teal": "#81c8be",
+    "green": "#a6d189",
+    "yellow": "#e5c890",
+    "peach": "#ef9f76",
+    "red": "#e78284",
+    "mauve": "#ca9ee6"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "session",
+          "style": "plain",
+          "background": "p:blue",
+          "background_templates": [
+            "{{ if .Root }}p:peach{{ end }}"
+          ],
+          "foreground": "p:base",
+          "template": "<p:base,background>▓▒░</>{{ .UserName }}@{{ .HostName }}"
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "options": {
+            "folder_icon": "..",
+            "home_icon": "~",
+            "style": "agnoster_short"
+          },
+          "template": "<parentBackground,background>▓▒░</>{{ .Path }}",
+          "background": "p:pink",
+          "foreground": "p:base"
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "options": {
+            "branch_icon": "",
+            "cherry_pick_icon": "pick:",
+            "commit_icon": "@",
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "merge_icon": "merge:",
+            "no_commits_icon": "new:",
+            "rebase_icon": "rebase:",
+            "revert_icon": "revert:",
+            "tag_icon": "#"
+          },
+          "template": "<parentBackground,background>▓▒░</>⎇ {{ .HEAD }}",
+          "background": "p:lavender",
+          "foreground": "p:base"
+        },
+        {
+          "type": "time",
+          "style": "plain",
+          "options": {
+            "time_format": "2006-01-02 15:04:05 MST"
+          },
+          "template": "<parentBackground,background>▓▒░</>{{ .CurrentDate | date \"2006-01-02 15:04:05 MST\" }}",
+          "background": "p:teal",
+          "foreground": "p:base"
+        },
+        {
+          "type": "executiontime",
+          "style": "plain",
+          "background": "p:green",
+          "background_templates": [
+            "{{ if ne .Code 0 }}p:red{{ end }}"
+          ],
+          "foreground": "p:base",
+          "options": {
+            "always_enabled": true,
+            "threshold": 0,
+            "style": "austin"
+          },
+          "template": "{{ if or (ge .Ms 1000) (ne .Code 0) }}<parentBackground,background>▓▒░</>{{ if ge .Ms 1000 }}{{ .FormattedMs }}{{ if ne .Code 0 }} {{ end }}{{ end }}{{ if ne .Code 0 }}✘ {{ .Code }}{{ end }}{{ end }}"
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "background": "p:base",
+          "foreground": "p:base",
+          "template": "<parentBackground,p:base>▓▒░</>"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "background": "transparent",
+          "foreground": "p:blue",
+          "foreground_templates": [
+            "{{ if ne .Code 0 }}p:red{{ end }}",
+            "{{ if .Root }}p:peach{{ end }}"
+          ],
+          "template": "{{ if .Root }}#{{ else }}>{{ end }}"
+        }
+      ]
+    }
+  ],
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "p:blue",
+    "foreground_templates": [
+      "{{ if ne .Code 0 }}p:red{{ end }}",
+      "{{ if .Root }}p:peach{{ end }}"
+    ],
+    "template": "{{ if .Root }}#{{ else }}>{{ end }} "
+  },
+  "final_space": true,
+  "version": 4
+}
