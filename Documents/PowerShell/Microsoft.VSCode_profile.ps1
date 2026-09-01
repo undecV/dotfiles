@@ -1,4 +1,4 @@
-oh-my-posh init pwsh --config "$env:USERPROFILE\.config\oh-my-posh\probua.minimal.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:USERPROFILE\.config\oh-my-posh\undecv.catppuccin.mocha.omp.json" | Invoke-Expression
 fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression
 
 if (Get-Command lsd -ErrorAction SilentlyContinue) {
