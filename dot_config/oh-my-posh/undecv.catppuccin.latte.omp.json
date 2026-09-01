@@ -1,0 +1,129 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "base": "#eff1f5",
+    "mantle": "#e6e9ef",
+    "crust": "#dce0e8",
+    "text": "#4c4f69",
+    "subtext1": "#5c5f77",
+    "surface1": "#bcc0cc",
+    "blue": "#1e66f5",
+    "pink": "#ea76cb",
+    "lavender": "#7287fd",
+    "teal": "#179299",
+    "green": "#40a02b",
+    "yellow": "#df8e1d",
+    "peach": "#fe640b",
+    "red": "#d20f39",
+    "mauve": "#8839ef"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "os",
+          "style": "diamond",
+          "leading_diamond": "",
+          "powerline_symbol": "",
+          "background": "p:blue",
+          "foreground": "p:base",
+          "template": " {{ .Icon }} {{ .UserName }}@{{ .HostName }} ",
+          "background_templates": [
+            "{{ if .Root }}p:peach{{ end }}"
+          ]
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "options": {
+            "folder_icon": "..",
+            "home_icon": "~",
+            "style": "agnoster_short"
+          },
+          "template": " {{ .Path }} ",
+          "background": "p:pink",
+          "foreground": "p:base"
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "options": {
+            "branch_icon": " ",
+            "cherry_pick_icon": " ",
+            "commit_icon": " ",
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "merge_icon": " ",
+            "no_commits_icon": " ",
+            "rebase_icon": " ",
+            "revert_icon": " ",
+            "tag_icon": " "
+          },
+          "template": " {{ .HEAD }} ",
+          "background": "p:lavender",
+          "foreground": "p:base"
+        },
+        {
+          "type": "time",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "options": {
+            "time_format": "2006-01-02 15:04:05 MST"
+          },
+          "template": " {{ .CurrentDate | date \"2006-01-02 15:04:05 MST\" }} ",
+          "background": "p:teal",
+          "foreground": "p:base"
+        },
+        {
+          "type": "executiontime",
+          "style": "powerline",
+          "background": "p:green",
+          "background_templates": [
+            "{{ if ne .Code 0 }}p:red{{ end }}"
+          ],
+          "foreground": "p:base",
+          "options": {
+            "always_enabled": true,
+            "threshold": 0,
+            "style": "austin"
+          },
+          "template": "{{ if or (ge .Ms 1000) (ne .Code 0) }} {{ if ge .Ms 1000 }}{{ .FormattedMs }}{{ if ne .Code 0 }} {{ end }}{{ end }}{{ if ne .Code 0 }}✘ {{ .Code }}{{ end }} {{ end }}",
+          "powerline_symbol": ""
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "background": "transparent",
+          "foreground": "p:blue",
+          "foreground_templates": [
+            "{{ if ne .Code 0 }}p:red{{ end }}",
+            "{{ if .Root }}p:peach{{ end }}"
+          ],
+          "template": "{{ if .Root }}#{{ else }}>{{ end }}"
+        }
+      ]
+    }
+  ],
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "p:blue",
+    "foreground_templates": [
+      "{{ if ne .Code 0 }}p:red{{ end }}",
+      "{{ if .Root }}p:peach{{ end }}"
+    ],
+    "template": "{{ if .Root }}#{{ else }}>{{ end }} "
+  },
+  "final_space": true,
+  "version": 4
+}
