@@ -4,6 +4,7 @@ LICENSE
 .gitconfig
 .vscode/
 docs/
+.config/oh-my-posh/README.md
 
 # Linux-specific and Android-specific files
 {{ if and (ne .chezmoi.os "linux") (ne .chezmoi.os "android") -}}
